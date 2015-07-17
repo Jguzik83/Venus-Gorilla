@@ -5,6 +5,6 @@
   * George
   * Jason
   * Jason
-  * Johnathan
+  * Jonathan
 
 
