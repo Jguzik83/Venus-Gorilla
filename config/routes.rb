@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :sessions, only: [:new, :create, :destroy]
   resources :surveys, :users, :questions
+  get '/thanks' => 'application#thanks'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
