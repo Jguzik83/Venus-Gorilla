@@ -1,0 +1,12 @@
+<h2>Please select a Survey to take!</h2>
+
+<div>
+  <% @surveys.each do |survey| %>
+  <div>
+    <%= survey.title %>
+  </div>
+  <div>
+    <%= button_to 'info', survey_path(survey), method: :get %>
+  </div>
+</div>
+

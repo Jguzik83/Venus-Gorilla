@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
 user1 = User.create(first_name: 'Jason', last_name: 'Chung', username: 'Venus', password: '1234', email: 'jc1234@gmail.com')
 
 user2 = User.create(first_name: 'George', last_name: 'Guzik', username: 'Pluto', password: '1234', email: 'gg1234@gmail.com')
@@ -51,6 +45,8 @@ choice14 = Choice.create(c_name: 'Sinatra', question_id: 4)
 
 choice15 = Choice.create(c_name: 'Meteor', question_id: 4)
 
+choice16 = Choice.create(c_name: 'Ninja', question_id: 4)
+
 survey = UserSurvey.create(user_id: 1, survey_id: 1)
 
 UserSurveyChoice.create(question_id: 1, choice_id: 1, user_survey_id: 1)
@@ -58,3 +54,5 @@ UserSurveyChoice.create(question_id: 1, choice_id: 1, user_survey_id: 1)
 UserSurveyChoice.create(question_id: 2, choice_id: 5, user_survey_id: 1)
 
 survey.update_attributes(completed: true)
+
+
