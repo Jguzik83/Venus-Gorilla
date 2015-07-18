@@ -1,0 +1,10 @@
+<h3>Edit your question</h3>
+
+<%= form_tag "/questions/#{@question.id}", method: :put do %>
+  <%= text_field :question, @question.id, :value => @question.q_name %>
+  <% @question.choices.each do |choice| %>
+    <div><%= text_field :choices, choice.id, :value => choice.c_name %></div>
+  <% end %>
+  <%= submit_tag "Update" %>
+<% end %>
+
