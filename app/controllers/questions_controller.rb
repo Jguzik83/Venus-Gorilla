@@ -12,11 +12,16 @@ class QuestionsController < ApplicationController
 
   def update
   puts "********************************************************************"
-  params["choices"].each { |choice|
-    puts choice[1]
-  }
+  params[:choices].each { |choice|
+    puts choice[0]
+    new_choice = Choice.find_by_id(choice[0])
+    new_choice.update_attributes(c_name: choice[1])
+    new_choice.save!
   puts "********************************************************************"
-  return 0
+    puts choice[1]
+  puts "********************************************************************"
+  }
+  redirect_to new_question_path
   end
 
 end
