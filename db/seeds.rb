@@ -49,9 +49,9 @@ choice16 = Choice.create(c_name: 'Ninja', question_id: 4)
 
 survey = UserSurvey.create(user_id: 1, survey_id: 1)
 
-UserSurveyChoice.create(question_id: 1, choice_id: 1, user_survey_id: 1)
+SurveyChoice.create(question_id: 1, choice_id: 1, user_survey_id: 1)
 
-UserSurveyChoice.create(question_id: 2, choice_id: 5, user_survey_id: 1)
+SurveyChoice.create(question_id: 2, choice_id: 5, user_survey_id: 1)
 
 survey.update_attributes(completed: true)
 

@@ -1,5 +1,13 @@
+
 <div> <%= @survey.title %> </div>
 
 <div> <%= @survey.description %> </div>
 
-<%#= button_to 'Take this Survey', question_path(), method: :get %>
+
+
+
+<%= form_for @user_survey do |f| %>
+  <%= f.hidden_field @user.id %>
+  <%= f.hidden_field @survey.id %>
+  <%= f.submit "Create" %>
+<% end %>

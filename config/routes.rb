@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :surveys, :users, :questions
   get '/thanks' => 'application#thanks'
+  # get '/user_surveys/:id' => 'user_surveys#new'
+  resources :user_surveys
+  # post '/user_surveys/:id' => 'user_surveys#create', as: 'new_game'
+  # get '/user_surveys/:id/question/:id' => 'user_surveys#get_question', as: 'ask_question'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

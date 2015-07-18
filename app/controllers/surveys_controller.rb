@@ -8,7 +8,9 @@ class SurveysController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])
     @survey = Survey.find_by(id: params[:id])
-    @questions = Questions.where(survey_id: @survey.id)
+    @user_survey = UserSurvey.find_by(id: params[:id])
+
+    # @questions = Questions.where(survey_id: @survey.id)
   end
 
   def new
