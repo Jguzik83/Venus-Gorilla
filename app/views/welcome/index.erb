@@ -1,0 +1,9 @@
+<h1>Welcome to Venus Gorilla</h1>
+
+<% if logged_in? %>
+  <a href="<%=logout_path%>">Log Out</a>
+  <% else %>
+  <a href="<%= login_path%>">Log In</a>
+  <a href="<%= new_user_path%>">Sign Up</a>
+  <br><br>
+  <%end%>
