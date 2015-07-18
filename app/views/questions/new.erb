@@ -1,0 +1,11 @@
+<h3>Add a new question</h3>
+
+<%= form_for @question, url: {action: "create"} do |f| %>
+  <%= f.text_field :q_name, placeholder: "Question Name" %>
+  <% @question.choices.each do |choice| %>
+    <%=fields_for choice.c_name do |choice_name| %>
+      <div><%= choice_name.text_field choice.id %></div>
+    <% end %>
+  <% end %>
+  <%= f.submit "Create" %>
+<% end %>

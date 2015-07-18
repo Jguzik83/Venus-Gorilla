@@ -1,7 +1,7 @@
 <div><%= @question.q_name %></div>
 <div><%= form_for @question do |f| %></div>
   <% @question.choices.each do |choice| %>
-    <div><%= f.radio_button :q_name, @question %>
+    <div><%= f.radio_button :choices, @question %>
     <%= f.label :c_name, choice.c_name %></div>
   <% end %>
   <%= f.submit "Submit" %>
