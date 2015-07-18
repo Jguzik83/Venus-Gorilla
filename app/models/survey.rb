@@ -1,5 +1,7 @@
 class Survey < ActiveRecord::Base
 
   has_many :questions
-  belongs_to :user
+  has_many :user_surveys
+  belongs_to :user, foreign_key: :owner_id
+
 end
