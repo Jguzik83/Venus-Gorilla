@@ -26,7 +26,14 @@ class SurveysController < ApplicationController
 
   def edit
     @user = User.find_by(id: session[:user_id])
-    @survey = Survey.find_by(user_id: params[:id])
+    @survey = Survey.find_by(id: params[:id])
+  end
+
+  def update
+    user = User.find_by(id: session[:user_id])
+    survey = Survey.find_by(id: params[:id])
+    survey.update(survey_params)
+    redirect_to user_path(user)
   end
 
   private
