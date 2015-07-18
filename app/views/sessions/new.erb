@@ -1,0 +1,15 @@
+<h2>Log In</h2>
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+  <%end%>
+  <br>
+
+<div><%= form_for @user, url: create_session_path do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Log In" %>
+<%end%></div>
