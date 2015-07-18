@@ -21,10 +21,12 @@ class SurveysController < ApplicationController
     survey = Survey.new(survey_params)
     survey.user = user
     survey.save
-    redirect_to
+    redirect_to new_question_path
   end
 
   def edit
+    @user = User.find_by(id: session[:user_id])
+    @survey = Survey.find_by(user_id: params[:id])
   end
 
   private
