@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+body {
+  height: 1262px;
+  width: 1180px;
+}
+
+#thanks {
+  text-align: center;
+}
+
+#monkey_script {
+  color: blue;
+  text-align: center;
+}
+
+#pic {
+  position: relative;
+  height: 250px;
+  width: 250px;
+}
