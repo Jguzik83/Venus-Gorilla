@@ -3,11 +3,10 @@
 
 <div> <%= @survey.description %> </div>
 
+<%= button_to 'Take this Survey', user_surveys_path(user_survey:{survey_id: @survey.id}) %>
 
-
-
-<%= form_for @user_survey do |f| %>
-  <%= f.hidden_field @user.id %>
-  <%= f.hidden_field @survey.id %>
-  <%= f.submit "Create" %>
-<% end %>
+<%#= form_tag user_surveys_path do %>
+  <%#= hidden_field_tag "user_survey[user_id]", @user.id %>
+  <%#= hidden_field_tag "user_survey[survey_id]", @survey.id %>
+  <%#= submit_tag "Create" %>
+<%# end %>

@@ -17,7 +17,7 @@ class UserSurvey < ActiveRecord::Base
     # binding.pry
   end
 
-  def give_questions
+  def give_question
     load_questions.first
   end
 
