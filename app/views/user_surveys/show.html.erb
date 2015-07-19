@@ -1,12 +1,3 @@
 <h1>Taking Survey "<%= @user_survey.survey.title %>"</h1>
 
-<div><%= @question.q_name %></div>
-  <div><%= form_tag survey_choices_path, method: 'post', :id => 'question_form' do %></div>
-    <% @question.choices.each do |choice| %>
-      <div><%= radio_button_tag "survey_choice[choice_id]", choice.id %>
-    <%= label_tag :c_name, choice.c_name %></div>
-    <% end %>
-    <%= hidden_field_tag "survey_choice[question_id]", @question.id %>
-    <%= hidden_field_tag "survey_choice[user_survey_id]", @user_survey.id %>
-  <%= submit_tag "Submit" %>
-<% end %>
+<%= render 'show', locals: {question: @question} %>
