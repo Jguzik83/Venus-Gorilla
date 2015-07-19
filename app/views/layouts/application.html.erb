@@ -11,6 +11,11 @@
 <![endif]-->
 </head>
 <body>
+  <header>
+    <% if session[:user_id] %>
+      <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
+    <% end %>
+  </header>
 
   <header class='nav_bar navbar-fixed-top navbar-inverse'>
     <div class='container'>
