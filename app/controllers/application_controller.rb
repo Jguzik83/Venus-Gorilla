@@ -12,8 +12,5 @@ class ApplicationController < ActionController::Base
       !!session[:user_id]
     end
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 1cf42babd42e77ae4fbdbe874467a01eaaef32b9
 end
