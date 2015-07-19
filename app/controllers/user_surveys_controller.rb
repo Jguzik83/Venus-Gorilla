@@ -1,14 +1,10 @@
 class UserSurveysController < ApplicationController
 
   def create
-
-    p "******************"
-    p params
-    p "******************"
     user = User.find_by(id: 1)
     user_survey = UserSurvey.new(user_survey_params)
     user_survey.user = user
-    byebug
+    user_survey.save!
     redirect_to user_survey_path(user_survey)
   end
 
@@ -19,12 +15,11 @@ class UserSurveysController < ApplicationController
 
     redirect_to thanks_path
   else
-    @question = @user_survey.give_question #survey.give_question
+    @question = @user_survey.give_question #survey.
+
   end
 
 end
-
-
 
 
 
