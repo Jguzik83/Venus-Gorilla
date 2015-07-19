@@ -8,11 +8,17 @@
 </head>
 <body>
 
-  <header>
-    <% if session[:user_id] %>
-      <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
-    <% end %>
+  <header id='nav_bar'>
+    <a href='<% root_path %>'>
+      <img src='http://thumbs.gograph.com/gg61606724.jpg' id='home_pic'>
+    </a>
 
+    <div id='logout_opt'>
+      <% if session[:user_id] %>
+        <a href='<% session_path(id: session[:user_id]), method: :delete %>'>
+        <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
+      <% end %>
+    </div>
   </header>
 
 <%= yield %>
