@@ -21,9 +21,9 @@ class SurveysController < ApplicationController
  end
 
  def create
-  user = User.find_by(id: session[:user_id])
+  owner = User.find_by(id: session[:user_id])
   survey = Survey.new(survey_params)
-  survey.user = user
+  survey.owner = owner
   survey.save
   redirect_to new_question_path
 end
