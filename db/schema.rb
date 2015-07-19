@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20150718211109) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "user_survey_choices", force: :cascade do |t|
-    t.integer  "question_id",    null: false
-    t.integer  "choice_id",      null: false
-    t.integer  "user_survey_id", null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "user_surveys", force: :cascade do |t|
     t.integer  "user_id",                    null: false
     t.integer  "survey_id",                  null: false
