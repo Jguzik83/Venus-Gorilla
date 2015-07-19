@@ -10,20 +10,12 @@ class UserSurveysController < ApplicationController
 
   def show
     @user_survey = UserSurvey.find_by(id: params[:id])
-
     if @user_survey.survey_over? #if survey.complete?
-
-    redirect_to thanks_path
-  else
-    @question = @user_survey.give_question #survey.
-
+      redirect_to thanks_path
+    else
+      @question = @user_survey.give_question #survey.
+    end
   end
-
-end
-
-
-
-
 
   private
 
