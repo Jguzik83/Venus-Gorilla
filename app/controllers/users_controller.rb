@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    session[:user_id] = user.user_id
-    if user.save
+    if user.save!
+      session[:user_id] = user.id
       redirect_to surveys_path
     else
       flash[:errors] = user.errors.full_messages

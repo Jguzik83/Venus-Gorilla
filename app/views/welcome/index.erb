@@ -1,8 +1,5 @@
 <h1>Welcome to Venus Gorilla</h1>
 
-<% if logged_in? %>
-  <%= button_to 'Log out', logout_path, method: :delete %>
-  <% else %>
 
   <div><%= form_tag sessions_path do %>
   <%= label_tag :username %>
@@ -16,4 +13,3 @@
 </div>
   <a href="<%= new_user_path%>">Sign Up</a>
   <br><br>
-  <%end%>
