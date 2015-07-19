@@ -1,8 +1,80 @@
-#pic {
+.pic {
   position: relative;
   height: 250px;
   width: 250px;
 }
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.home_img {
+  height: 100px;
+  width: 100px;
+}
+
+#nav_bar {
+  background-color: #8ED6F0;
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  border: solid black;
+}
+
+body {
+  height: 1262px;
+  width: 1200px;
+}
+
+#heading {
+  display: inline-block;
+  font-size: 32px;
+  width: 700px;
+  text-align: center;
+  padding: 25px;
+  position: absolute; left: 200px; top: 0px;
+  font-family: Impact, Charcoal, sans-serif;
+
+}
+
+.buttons {
+  display: inline-block;
+  float: right;
+  padding: 25px;
+}
+
+#take_survey {
+  text-align: center;
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+#survey_list {
+  text-align: center;
+}
+
+#survey_title {
+  font-family: Blippo, fantasy;
+  font-size: 40px;
+
+}
+
+#main_body {
+  height: 1200px;
+}
+
+#survey_start_title {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+#survey_description {
+  padding-top: 20px;
+  font-size: 20px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#survey_create_form {
+  font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
+}

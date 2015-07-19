@@ -5,38 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-  </script>
-<![endif]-->
+
 </head>
 <body>
-  <header>
-    <% if session[:user_id] %>
-      <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
-    <% end %>
-  </header>
 
-  <header class='nav_bar navbar-fixed-top navbar-inverse'>
-    <div class='container'>
-      <a href='<% root_path %>'>
-        <img src='http://thumbs.gograph.com/gg61606724.jpg' id='home_pic'>
-      </a>
+    <header id='nav_bar'>
+        <h3 id='heading'>Survey Gorilla: We ain't monkeying around here</h3>
+      <% if session[:user_id] %>
+        <%= link_to image_tag('http://thumbs.gograph.com/gg61606724.jpg', class: 'home_img'), surveys_path %>
+        <div class='buttons'>
+          <%= button_to 'Create A Survey', new_survey_path(id: session[:user_id]), method: :get %>
+          <%= button_to 'Profile', user_path(id: session[:user_id]), method: :get %>
+          <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
+        </div>
+      <% end %>
+    </header>
 
-      <nav>
-        <ul class='nav navbar-nar navbar-right'>
-        <% if session[:user_id] %>
-          <h3 id='header'>Survey Gorilla: We ain't monkeying around here</h3>
-          <li><%= button_to 'Create A Survey', session_path(id: session[:user_id]), method: :delete %></li>
-          <li><%= button_to 'Profile', session_path(id: session[:user_id]), method: :delete %></li>
-          <li><%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %></li>
-        <% end %>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id='main_body'>
 
-<%= yield %>
+    <%= yield %>
+
+  </div>
 
 </body>
 </html>

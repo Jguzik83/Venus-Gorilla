@@ -1,7 +1,7 @@
 
-<div> <%= @survey.title %> </div>
+<div id='survey_start_title'> <%= @survey.title %> </div>
 
-<div> <%= @survey.description %> </div>
+<div id='survey_description'> <%= @survey.description %> </div>
 
 <%= button_to 'Take this Survey', user_surveys_path(user_survey:{survey_id: @survey.id}) %>
 
