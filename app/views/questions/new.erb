@@ -1,1 +1,7 @@
-new question page
+<div><%= @survey.title %></div>
+<div><%= @survey.description %></div>
+<h2>Make some new Questions</h2>
+
+<% @survey.questions.each do |question| %>
+  <div><%= question.q_name %></div>
+<% end %>

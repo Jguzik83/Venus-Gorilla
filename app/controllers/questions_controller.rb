@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   # end
 
   def new
+    @survey = User.find_by_id(session[:user_id]).surveys.last
   end
 
   def edit
