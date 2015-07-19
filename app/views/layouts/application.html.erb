@@ -15,7 +15,9 @@
 
     <div id='logout_opt'>
       <% if session[:user_id] %>
-        <a href='<% session_path(id: session[:user_id]), method: :delete %>'>
+        <h3 id='header'>Survey Gorilla: We ain't monkeying around here</h3>
+        <%= button_to 'Create A Survey', session_path(id: session[:user_id]), method: :delete %>
+        <%= button_to 'Profile', session_path(id: session[:user_id]), method: :delete %>
         <%= button_to 'Log out', session_path(id: session[:user_id]), method: :delete %>
       <% end %>
     </div>

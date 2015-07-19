@@ -1,35 +1,8 @@
-body {
-  height: 1262px;
-  width: 1180px;
-}
-
-#thanks {
-  text-align: center;
-}
-
-#monkey_script {
-  color: blue;
-  text-align: center;
-}
-
 #pic {
   position: relative;
   height: 250px;
   width: 250px;
 }
 
-#nav_bar {
-  display: inline;
-  height: 60px;
-  width: 60px;
-}
-
-#logout_opt {
-  float: right;
-}
-
-#home_pic {
-  height: 50px;
-  width: 50px;
-
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";

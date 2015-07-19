@@ -1,3 +1,6 @@
+//= require jquery
+//= require bootstrap-sprockets
+
 $(document).ready(function(event){
   var width = $(document).width();
   function goRight(){
