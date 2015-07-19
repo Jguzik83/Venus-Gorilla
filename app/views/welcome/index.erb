@@ -1,0 +1,15 @@
+<h1>Welcome to Venus Gorilla</h1>
+
+
+  <div><%= form_tag sessions_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br>
+  <%= submit_tag "Log In" %>
+<%end%>
+</div>
+  <a href="<%= new_user_path%>">Sign Up</a>
+  <br><br>
