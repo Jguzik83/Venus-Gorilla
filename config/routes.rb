@@ -4,17 +4,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  resources :surveys, :users, :questions
 
-  get '/thanks' => 'application#thanks'
-  # get '/user_surveys/:id' => 'user_surveys#new'
-  resources :user_surveys
-  # post '/user_surveys/:id' => 'user_surveys#create', as: 'new_game'
-  # get '/user_surveys/:id/question/:id' => 'user_surveys#get_question', as: 'ask_question'
+  resources :surveys, :users, :questions, :sessions
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'#, as: 'create_session'
+  # delete '/logout' => 'sessions#destroy'#, as: 'logout'
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create', as: 'create_session'
-  get '/logout' => 'sessions#destroy', as: 'logout'
 
 
   # Example of regular route:

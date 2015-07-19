@@ -1,9 +1,19 @@
 <h1>Welcome to Venus Gorilla</h1>
 
 <% if logged_in? %>
-  <a href="<%=logout_path%>">Log Out</a>
+  <%= button_to 'Log out', logout_path, method: :delete %>
   <% else %>
-  <a href="<%= login_path%>">Log In</a>
+
+  <div><%= form_tag sessions_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br>
+  <%= submit_tag "Log In" %>
+<%end%>
+</div>
   <a href="<%= new_user_path%>">Sign Up</a>
   <br><br>
   <%end%>
