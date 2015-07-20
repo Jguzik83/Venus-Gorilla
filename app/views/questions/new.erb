@@ -1,6 +1,14 @@
 <div><%= @survey.title %></div>
 <div><%= @survey.description %></div>
-<h2>Make some new Questions</h2>
+<h2>Make some new questions</h2>
+
+<%= form_tag "/questions", method: :post do %>
+  <%= text_field :question, @question.id, :value => @question.q_name %>
+  <% @question.choices.each do |choice| %>
+    <div><%= text_field :choices, choice.id, :value => choice.c_name %></div>
+  <% end %>
+  <%= submit_tag "Create" %>
+<% end %>
 
 <% @survey.questions.each do |question| %>
   <div><%= question.q_name %></div>

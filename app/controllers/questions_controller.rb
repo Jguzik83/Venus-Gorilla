@@ -5,6 +5,15 @@ class QuestionsController < ApplicationController
 
   def new
     @survey = User.find_by_id(session[:user_id]).surveys.last
+    @question = Question.new
+  end
+
+  def create
+    survey = User.find_by_id(session[:user_id]).surveys.last
+    question = Question.new(question_params)
+    question.survey = survey
+    question.save!
+    redirect_to new_question_path
   end
 
   def edit
@@ -26,6 +35,12 @@ class QuestionsController < ApplicationController
   end
   puts "********************************************************************"
   redirect_to new_question_path
+  end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:q_name, :survey_id)
   end
 
 end
