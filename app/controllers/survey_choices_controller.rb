@@ -3,9 +3,10 @@ class SurveyChoicesController < ApplicationController
   def create
     survey_choice = SurveyChoice.new(survey_choice_params)
     @user_survey = UserSurvey.find_by(id: survey_choice.user_survey_id)
+    survey_choice.save!
     if @user_survey.survey_over?
       redirect_to thanks_path
-    elsif survey_choice.save && request.xhr?
+    elsif request.xhr?
     @question = @user_survey.give_question
       render(partial: 'user_surveys/show', layout: false, locals:{question: @question, user_survey: @user_survey})
     end
