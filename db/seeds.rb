@@ -15,6 +15,8 @@ question3 = Question.create(q_name: 'What programming language do you use most o
 
 question4 = Question.create(q_name: 'What web application framework do you prefer?', survey_id:2)
 
+question5 = Question.create(q_name: 'Which flavor would be great for a panda?', survey_id:1)
+
 choice1 = Choice.create(c_name: 'Vanilla', question_id: 1)
 
 choice2 = Choice.create(c_name: 'Chocolate', question_id: 1)
@@ -46,6 +48,14 @@ choice14 = Choice.create(c_name: 'Sinatra', question_id: 4)
 choice15 = Choice.create(c_name: 'Meteor', question_id: 4)
 
 choice16 = Choice.create(c_name: 'Ninja', question_id: 4)
+
+choice17 = Choice.create(c_name: 'Bamboo', question_id: 5)
+
+choice18 = Choice.create(c_name: 'Bags of Panda droppings', question_id: 5)
+
+choice19 = Choice.create(c_name: 'Donuts', question_id: 5)
+
+choice20 = Choice.create(c_name: 'Burgers', question_id: 5)
 
 survey = UserSurvey.create(user_id: 1, survey_id: 1)
 

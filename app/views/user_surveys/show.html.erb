@@ -1,3 +1,5 @@
 <h1>Taking Survey "<%= @user_survey.survey.title %>"</h1>
 
+<div id='bubble'>
 <%= render 'show', locals: {question: @question, user_survey: @user_survey} %>
+</div>

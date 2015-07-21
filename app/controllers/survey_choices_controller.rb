@@ -2,14 +2,12 @@ class SurveyChoicesController < ApplicationController
 
   def create
     survey_choice = SurveyChoice.new(survey_choice_params)
-    # survey_choice.save!
     @user_survey = UserSurvey.find_by(id: survey_choice.user_survey_id)
+    if @user_survey.survey_over?
+      redirect_to thanks_path
+    elsif survey_choice.save && request.xhr?
     @question = @user_survey.give_question
-    if survey_choice.save && request.xhr?
       render(partial: 'user_surveys/show', layout: false, locals:{question: @question, user_survey: @user_survey})
-      #'render "show", locals: {question: @question}'
-    else
-      redirect_to root_path
     end
     # redirect_to user_survey_path(survey_choice.user_survey_id)
   end
